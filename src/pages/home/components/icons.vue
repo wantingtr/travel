@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="icons">
     <swiper >
-      <swiper-slide v-for="page of pages" :key="index">
+      <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="icon"
              v-for="item of page"
              :key="item.id">
@@ -60,20 +60,20 @@ export default {
       }]
     }
   },
-  computed:{
+  computed: {
     pages () {
       const pages = []
-      this.iconList.forEach((item,index) => {
+      this.iconList.forEach((item, index) => {
         const page = Math.floor(index / 8)
-        //计算当前index所处页面
-        if(!pages[page]){
+        // 计算当前index所处页面
+        if (!pages[page]) {
           pages[page] = []
-          //当前page溢出，新建页面
+          // 当前page溢出，新建页面
         }
         pages[page].push(item)
       })
       return pages
-      //根据数据自动构建页码，实现多页切换的轮播图
+      // 根据数据自动构建页码，实现多页切换的轮播图
     }
   }
 }
