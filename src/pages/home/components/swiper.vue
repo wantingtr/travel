@@ -1,5 +1,6 @@
 <template lang="html">
   <div class="wrapper">
+    <!--最外层的div标签，是为了防止页面加载时间形成闪烁-->
     <swiper :options="swiperOption">
 
       <swiper-slide v-for="item of swiperList" :key='item.id'>
@@ -7,6 +8,7 @@
       </swiper-slide>
 
       <div class="swiper-pagination"  slot="pagination"></div>
+      <!--pagination为轮播图下方的小圆点，并且所有的slot都需要在data中定义 -->
     </swiper>
   </div>
 </template>
@@ -39,11 +41,10 @@ export default {
 .wrapper >>> .swiper-pagination-bullet-active
   background: #fff
 .wrapper
-  background: #eee
   width: 100%
   height:0
   overflow: hidden
-  padding-bottom: 31.25%
+  padding-bottom: 26.5%
   .swiper-image
     width:100%
 </style>
