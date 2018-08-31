@@ -8,7 +8,7 @@
           <div class="icon-img">
             <img class="icon-img-content" :src='item.imgUrl' alt="">
           </div>
-          <p class="icon-text">{{item.icontext}}</p>
+          <p class="icon-text">{{item.title}}</p>
         </div>
       </swiper-slide>
     </swiper>
@@ -19,46 +19,8 @@
 <script>
 export default {
   name: 'homeIcons',
-  data () {
-    return {
-      iconList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        icontext: '景点门票'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png',
-        icontext: '水上乐园'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png',
-        icontext: '游乐场'
-      }, {
-        id: '0004',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/b6/37560ece9c62b502.png',
-        icontext: '城市观光'
-      }, {
-        id: '0005',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
-        icontext: '景点门票'
-      }, {
-        id: '0006',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png',
-        icontext: '水上乐园'
-      }, {
-        id: '0007',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png',
-        icontext: '游乐场'
-      }, {
-        id: '0008',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/b6/37560ece9c62b502.png',
-        icontext: '城市观光'
-      }, {
-        id: '0009',
-        imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/b6/37560ece9c62b502.png',
-        icontext: '城市观光'
-      }]
-    }
+  props: {
+    iconList: Array
   },
   computed: {
     pages () {

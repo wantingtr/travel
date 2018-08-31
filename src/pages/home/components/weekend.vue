@@ -2,7 +2,7 @@
   <div>
     <div class="recommend-title">周末去哪儿</div>
       <ul>
-        <li class="item border-bottom" v-for='(item,index) of recommendList' :key="index">
+        <li class="item border-bottom" v-for='(item,index) of weekendList' :key="index">
           <div class="item-img-wrapper">
             <img class="item-img"
                  :src='item.imgUrl'>
@@ -19,25 +19,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1505/7d/df6ff468331c43.jpg_r_640x214_1f3783d0.jpg',
-        title: '上海必游top10',
-        content: '中西合璧，现代和传统各有各的精彩'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1511/1d/fe098e8cfec117.jpg_r_640x214_a9be292a.jpg',
-        title: '上海城市观光',
-        content: '来这里寻找你所认识的上海'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/source/1505/7b/2a6b0ce087f0e5.jpg_r_640x214_5c76b115.jpg',
-        title: '情迷博物馆',
-        content: '穿梭时光岁月寻找答案'
-      }]
-    }
+  props: {
+    weekendList: Array
   }
 }
 </script>

@@ -7,16 +7,21 @@
       <span class="iconfont icon-find">&#xe632;</span>
       输入城市/景点/游玩主题
     </div>
-    <div class="header-right">
-      城市
-      <span class="iconfont icon-down">&#xe64a;</span>
-    </div>
+    <router-link to='/city'>
+      <div class="header-right">
+        {{this.city}}
+        <span class="iconfont icon-down">&#xe64a;</span>
+      </div>
+    </router-link>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'homeHeader'
+  name: 'homeHeader',
+  props: {
+    city: String
+  }
 }
 </script>
 
@@ -44,9 +49,10 @@ export default {
         font-size: .35rem
         padding: .1rem
     .header-right
-      width: 17%
+      margin-left: .1rem
       float: right
       text-align: center
+      color: #fff
       .icon-down
         font-size: .2rem
         margin-left: -0.02rem
