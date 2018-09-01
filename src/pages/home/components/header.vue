@@ -29,11 +29,12 @@ export default {
   @import '~styles/varibles.styl'
   .header
     display: flex
-    height: .86rem
+    height: .88rem
     background: $bgColor
     color: #fff
     font-size: .30rem
     line-height: .86rem
+    padding: 0
     .header-left
       width: 10%
       float: left
