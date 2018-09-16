@@ -12,6 +12,10 @@ export default {
   name: 'cityAlphabet',
   props: {
     cities: Object
+  },
+  handleClick (e) {
+    this.$emit('change', e.target.innerText)
+    // 为字母绑定一个click事件，当点击时向外触发事件，事件的名字为‘change’，携带的内容即为这个字母
   }
 }
 </script>

@@ -2,15 +2,17 @@
   <div>
     <div class="recommend-title">热销推荐</div>
       <ul>
-        <li class="item border-bottom" v-for='(item,index) of recommendList' :key="index">
-          <img class="item-img"
-               :src='item.imgUrl'>
-          <div class="item-info">
-            <p class="item-title">{{item.title}}</p>
-            <p class="item-content">{{item.content}}</p>
-            <button class="item-button" type="button" name="button">查看详情</button>
-          </div>
-        </li>
+        <router-link to="./detail">
+          <li class="item border-bottom" v-for='(item,index) of recommendList' :key="index">
+            <img class="item-img"
+                 :src='item.imgUrl'>
+            <div class="item-info">
+              <p class="item-title">{{item.title}}</p>
+              <p class="item-content">{{item.content}}</p>
+              <button class="item-button" type="button" name="button">查看详情</button>
+            </div>
+          </li>
+        </router-link>
       </ul>
   </div>
 </template>
@@ -25,6 +27,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+  a
+    color: #333
   .recommend-title
     margin-top: .2rem
     line-height: .8rem
