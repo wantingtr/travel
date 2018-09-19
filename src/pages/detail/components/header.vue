@@ -3,7 +3,11 @@
     <router-link rag="div" to="/" class="header-abs" v-show="showABS">
       <span class="iconfont">&#xe624;</span>
     </router-link>
-  <div class="header-fixed" v-show="!showABS">
+  <div
+  class="header-fixed"
+  v-show="!showABS"
+  :style="opacityStyle"
+  >
       景点详情
       <router-link to='/'>
         <span class="iconfont">&#xe624;</span>
@@ -18,24 +22,32 @@ export default {
   name: 'detailHeader',
   data () {
     return {
-      showABS: true
+      showABS: true,
+      opacityStyle: {
+        opacity: 0
+      }
     }
   },
   methods: {
     handleScroll () {
-      /*
       const top = document.documentElement.scrollTop
       if (top > 60) {
+        let opacity = top / 140
+        opacity = opacity > 1 ? 1 : opacity
+        this.opacityStyle = {
+          opacity: opacity
+        }
         this.showABS = false
       } else {
         this.showABS = true
       }
-      */
-      console.log(document.documentElement.scrollTop)
     }
   },
-  activated () {
+  mounted () {
     window.addEventListener('scroll', this.handleScroll)
+  },
+  beforeDestroy () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
@@ -66,6 +78,7 @@ export default {
   top: 0
   left: 0
   right: 0
+  z-index: 2
   .iconfont
     position: absolute
     top: 0

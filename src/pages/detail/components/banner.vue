@@ -2,35 +2,44 @@
   <div class="">
     <div class="banner" @click="showgallary">
       <img class="banner-img"
-           src="//img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_600x330_8572a930.jpg">
+           :src="bannerImg">
       <div class="banner-info">
-        <p class="banner-title">上海迪士尼乐园</p>
+        <p class="banner-title">{{this.sightName}}</p>
         <div class="video">
           <p class="video-info">视频</p>
           <span class="iconfont icon-down">&#xe87c;</span>
         </div>
       </div>
     </div>
-    <common-gallary
-    :imgs="imgs"
-    v-show="showGallary"
-    @close="handleGallaryClose"
-    ></common-gallary>
+    <fade>
+      <common-gallary
+      :imgs="gallaryImgs"
+      v-show="showGallary"
+      @close="handleGallaryClose"
+      ></common-gallary>
+    </fade>
   </div>
 </template>
 
 <script>
 import commonGallary from 'common/gallary/gallary'
+import fade from 'common/fade/fade'
 export default {
   name: 'banner',
+  props: {
+    sightName: String,
+    bannerImg: String,
+    gallaryImgs: Array,
+    categoryList: Array
+  },
   data () {
     return {
-      imgs: ['http://img1.qunarzz.com/sight/p0/1711/d9/d9119bcadf6045f5a3.img.jpg_r_800x800_8628ce0c.jpg', 'http://img1.qunarzz.com/sight/p0/1711/81/81ed632012f27eeaa3.img.jpg_r_800x800_93f1a7af.jpg'],
       showGallary: false
     }
   },
   components: {
-    commonGallary
+    commonGallary,
+    fade
   },
   methods: {
     showgallary () {
