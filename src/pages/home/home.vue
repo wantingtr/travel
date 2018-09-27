@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     getHomeInfo () {
-      axios.get('/api/index.json').then(this.getHomeInfoSucc)
+      axios.get('/static/index.json').then(this.getHomeInfoSucc)
     },
     getHomeInfoSucc (res) {
       res = res.data
